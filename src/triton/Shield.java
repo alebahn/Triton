@@ -1,5 +1,5 @@
 package triton;
-import java.awt.*;
+import java.awt.Image;
 
 public class Shield extends Defense {
 	private Image aura;

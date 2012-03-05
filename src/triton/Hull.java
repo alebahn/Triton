@@ -1,5 +1,5 @@
 package triton;
-import java.awt.*;
+import java.awt.Image;
 
 public class Hull extends Defense {
 	private Image ship;

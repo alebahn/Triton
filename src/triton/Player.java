@@ -1,5 +1,6 @@
 package triton;
-import java.awt.*;
+import java.awt.Image;
+import java.util.ArrayList;
 
 public class Player extends Unit {
 	private int shield;
@@ -7,8 +8,8 @@ public class Player extends Unit {
 	private Image portrait;
 	private int charges;
 	private int rechargeRate;
-	// private ArrayList<Upgrade> boughtUpgrades;
-	// private ArrayList<Upgrade> activeUpgrades;
+	private ArrayList<Upgrade> boughtUpgrades;
+	private ArrayList<Upgrade> activeUpgrades;
 	// no getters and setters for these yet
 	Player() {}
 	@Override

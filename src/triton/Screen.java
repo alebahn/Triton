@@ -1,11 +1,12 @@
 package triton;
 
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Graphics;
+import java.awt.Image;
 
 public class Screen extends Canvas {
 	private Field field;
-	private Image background;
-	// private bitmap border
+	private Image boarder;
 	Screen() {
 	}
 	@Override
