@@ -2,7 +2,7 @@ package triton;
 
 import java.awt.geom.Point2D;
 
-public abstract class Bullets extends Entity {
+public abstract class Bullet extends Entity {
 	protected Point2D direction;
 	protected double speed;
 	protected int penetration;
@@ -10,7 +10,7 @@ public abstract class Bullets extends Entity {
 	protected double range;
 	protected boolean active;
 
-	public Bullets() {
+	public Bullet() {
 		// TODO Auto-generated constructor stub
 	}
 	public void fire() {
