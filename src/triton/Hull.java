@@ -4,7 +4,7 @@ import java.awt.*;
 public class Hull extends Defense {
 	private Image ship;
 	private int value;
-	Hull()	{}
+	public Hull()	{}
 	public Image getShip() {
 		return ship;
 	}

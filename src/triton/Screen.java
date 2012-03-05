@@ -6,7 +6,7 @@ public class Screen extends Canvas {
 	private Field field;
 	private Image background;
 	// private bitmap border
-	Screen() {
+	public Screen() {
 	}
 	@Override
 	public void paint(Graphics g) {
