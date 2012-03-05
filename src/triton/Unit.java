@@ -1,5 +1,6 @@
 package triton;
 
-public class Unit {
-
+public abstract class Unit extends Entity{
+		protected int health;
+		protected int money;
 }
