@@ -33,9 +33,8 @@ public final class Boss extends Enemy {
 		// TODO Auto-generated method stub
 
 	}
-	
-	public ArrayList<Entity> getWave(int time)
-	{
+
+	public ArrayList<Entity> getWave(int time) {
 		if (waves.containsKey(time))
 			return waves.get(time);
 		else
