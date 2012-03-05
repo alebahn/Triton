@@ -11,7 +11,7 @@ public class Player extends Unit {
 	private ArrayList<Upgrade> boughtUpgrades;
 	private ArrayList<Upgrade> activeUpgrades;
 	// no getters and setters for these yet
-	Player() {}
+	public Player() {}
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub

@@ -7,15 +7,28 @@ public abstract class Bullet extends Entity {
 	protected double speed;
 	protected int penetration;
 	protected int damage;
-	protected double range;
 	protected boolean active;
 
-	public Bullet() {
-		// TODO Auto-generated constructor stub
+	public Bullet(Point2D direction, double speed, int penetration, int damage) {
+		this.direction = direction;
+		this.speed = speed;
+		this.penetration = penetration;
+		this.damage = damage;
 	}
 	public void fire() {
 		
 	}
+	@Override
+	public void colide(Entity other) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void colisionReact(Entity other) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	public Point2D getDirection() {
 		return direction;
 	}
@@ -27,9 +40,6 @@ public abstract class Bullet extends Entity {
 	}
 	public int getDamage() {
 		return damage;
-	}
-	public double getRange() {
-		return range;
 	}
 	public boolean isActive() {
 		return active;
