@@ -1,6 +1,6 @@
 package triton;
 
-public abstract class Defense {
+public abstract class Defense extends Upgrade {
 	public void apply(Player player){
 		
 	}
