@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
-public class Entity
+public abstract class Entity
 {
 	protected Image image; 
 	protected Rectangle2D hitBox;
@@ -12,8 +12,8 @@ public class Entity
 	//protected Field field
 
 	public Entity() {}
-	public void tick() {}
+	public abstract void tick();
 	public void move(Point2D destination) {}
-	public void colide(Entity other) {}
-	public void colisionReact(Entity other) {}
+	public abstract void colide(Entity other);
+	public abstract void colisionReact(Entity other);
 }
