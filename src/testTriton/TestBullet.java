@@ -10,7 +10,7 @@ import triton.Player;
 public class TestBullet {
 	class MockBullet extends Bullet {
 		public MockBullet(int penetration) {
-			super(null, 0, penetration, 0);
+			super(null, 0, penetration, 0, null, null);
 		}
 
 		@Override
@@ -34,11 +34,11 @@ public class TestBullet {
 	public void testColide() {
 		MockBullet b = new MockBullet(1);
 		b.fire();
-		b.colide(new Player());
+		b.colide(new Player(0, null, null));
 		Assert.assertFalse(b.isActive());
 		b = new MockBullet(4);
 		b.fire();
-		b.colide(new Player());
+		b.colide(new Player(0, null, null));
 		Assert.assertTrue(b.isActive());
 		Assert.assertEquals(3, b.getPenetration());
 	}
@@ -47,7 +47,7 @@ public class TestBullet {
 	public void testColisionReact() {
 		MockBullet b = new MockBullet(1);
 		b.fire();
-		b.colisionReact(new Player());
+		b.colisionReact(new Player(0, null, null));
 		Assert.assertTrue(b.isActive());
 		Assert.assertEquals(1, b.getPenetration());
 	}

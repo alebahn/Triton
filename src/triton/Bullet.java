@@ -1,6 +1,8 @@
 package triton;
 
+import java.awt.Image;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 public abstract class Bullet extends Entity {
 	protected Point2D direction;
@@ -9,7 +11,8 @@ public abstract class Bullet extends Entity {
 	protected int damage;
 	protected boolean active;
 
-	public Bullet(Point2D direction, double speed, int penetration, int damage) {
+	public Bullet(Point2D direction, double speed, int penetration, int damage, Image image, Rectangle2D hitBox) {
+		super(image, hitBox);
 		this.direction = direction;
 		this.speed = speed;
 		this.penetration = penetration;

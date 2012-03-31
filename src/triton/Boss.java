@@ -1,13 +1,15 @@
 package triton;
 
+import java.awt.Image;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public final class Boss extends Enemy {
 	private HashMap<Integer, ArrayList<Entity>> waves;
 
-	public Boss() {
-		// TODO Auto-generated constructor stub
+	public Boss(int money, Image image, Rectangle2D hitBox) {
+		super(money, image, hitBox);
 	}
 
 	@Override

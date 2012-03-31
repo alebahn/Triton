@@ -1,5 +1,6 @@
 package triton;
 import java.awt.Image;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 public class Player extends Unit {
@@ -11,8 +12,8 @@ public class Player extends Unit {
 	private ArrayList<Upgrade> boughtUpgrades;
 	private ArrayList<Upgrade> activeUpgrades;
 	// no getters and setters for these yet
-	public Player(int money) {
-		super(money);
+	public Player(int money, Image image, Rectangle2D hitBox) {
+		super(money, image, hitBox);
 	}
 	@Override
 	public void tick() {
