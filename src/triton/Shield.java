@@ -4,7 +4,9 @@ import java.awt.Image;
 public class Shield extends Defense {
 	private Image aura;
 	private int value;
-	public Shield()	{}
+	public Shield(int co, Image Img, String Str){
+		super(co,Img,Str);
+	}
 	public Image getAura() {
 		return aura;
 	}

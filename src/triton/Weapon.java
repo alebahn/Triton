@@ -1,4 +1,5 @@
 package triton;
+import java.awt.Image;
 import java.util.ArrayList;
 
 public class Weapon extends Upgrade {
@@ -6,6 +7,9 @@ public class Weapon extends Upgrade {
 	private int rateOfFire;
 	public void fire(){
 		
+	}
+	public Weapon(int co, Image Img, String Str){
+		super(co,Img,Str);
 	}
 	public ArrayList<Bullet> getBullets() {
 		return bullets;

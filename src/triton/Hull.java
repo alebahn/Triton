@@ -4,7 +4,9 @@ import java.awt.Image;
 public class Hull extends Defense {
 	private Image ship;
 	private int value;
-	public Hull()	{}
+	public Hull(int co, Image Img, String Str){
+		super(co,Img,Str);
+	}
 	public Image getShip() {
 		return ship;
 	}
