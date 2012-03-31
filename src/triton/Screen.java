@@ -1,10 +1,11 @@
 package triton;
 
-import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class Screen extends Canvas {
+import javax.swing.JPanel;
+
+public class Screen extends JPanel {
 	private Field field;
 	private Image boarder;
 	private Image background;
