@@ -30,7 +30,7 @@ public class TestUpgrade {
 	
 	@Test
 	public void testpurchase(){
-		Player P = new Player(150);
+		Player P = new Player(150, null, null);
 		mockUpgrade U = new mockUpgrade(100);
 		assertTrue(U.canBuy(P));
 	}
