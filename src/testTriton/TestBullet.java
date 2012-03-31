@@ -42,5 +42,24 @@ public class TestBullet {
 		Assert.assertTrue(b.isActive());
 		Assert.assertEquals(3, b.getPenetration());
 	}
+	
+	@Test
+	public void testColisionReact() {
+		MockBullet b = new MockBullet(1);
+		b.fire();
+		b.colisionReact(new Player());
+		Assert.assertTrue(b.isActive());
+		Assert.assertEquals(1, b.getPenetration());
+	}
+	
+	@Test
+	public void testGetters() {
+		MockBullet b = new MockBullet(1);
+		Assert.assertNull(b.getDirection());
+		Assert.assertEquals(0, b.getSpeed(), 0);
+		Assert.assertEquals(1, b.getPenetration());
+		Assert.assertEquals(0, b.getDamage());
+		Assert.assertFalse(b.isActive());
+	}
 
 }
