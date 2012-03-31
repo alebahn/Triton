@@ -3,7 +3,7 @@ import java.awt.Image;
 
 public class ScreenClear extends Special {
 	private Image effect;
-	ScreenClear()	{}
+	public ScreenClear()	{}
 	public Image getEffect() {
 		return effect;
 	}

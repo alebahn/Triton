@@ -2,7 +2,7 @@ package triton;
 
 public class Core extends Defense {
 		private int value;
-		Core()	{}
+		public Core()	{}
 		public int getValue() {
 			return value;
 		}

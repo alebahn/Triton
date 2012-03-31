@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class Field {
 	private ArrayList<Entity> occupants;
 
-	Field() {
+	public Field() {
 	}
 	public Iterator<Entity> GetOccupantsIterator() {
 		return occupants.iterator();

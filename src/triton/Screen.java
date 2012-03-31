@@ -7,7 +7,8 @@ import java.awt.Image;
 public class Screen extends Canvas {
 	private Field field;
 	private Image boarder;
-	Screen() {
+	private Image background;
+	public Screen() {
 	}
 	@Override
 	public void paint(Graphics g) {

@@ -3,7 +3,7 @@ package triton;
 public class MoneyMultiplier extends Special {
 	private int duration;
 	private double multiplier;
-	MoneyMultiplier()	{}
+	public MoneyMultiplier()	{}
 	public int getDuration() {
 		return duration;
 	}
