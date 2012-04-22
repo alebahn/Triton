@@ -12,6 +12,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GameMenu extends JPanel {
@@ -85,11 +86,18 @@ public class GameMenu extends JPanel {
 			case STARTUP:
 				title="Triton";
 				buttons = new ArrayList<MenuButton>(5);
-				buttons.add(new MenuButton("start", new Point2D.Double(100, 200)));
-				buttons.add(new MenuButton("load", new Point2D.Double(400, 200)));
-				buttons.add(new MenuButton("options", new Point2D.Double(100, 262)));
-				buttons.add(new MenuButton("tutorial", new Point2D.Double(400, 262)));
-				buttons.add(new MenuButton("quit", new Point2D.Double(250, 324)));
+				MenuButtonListener mbl = new MenuButtonListener() {
+					
+					@Override
+					public void ButtonClicked(MenuButton button) {
+						JOptionPane.showMessageDialog(null, "Click!");
+					}
+				};
+				buttons.add(new MenuButton("start", new Point2D.Double(100, 200), mbl));
+				buttons.add(new MenuButton("load", new Point2D.Double(400, 200), mbl));
+				buttons.add(new MenuButton("options", new Point2D.Double(100, 262), mbl));
+				buttons.add(new MenuButton("tutorial", new Point2D.Double(400, 262), mbl));
+				buttons.add(new MenuButton("quit", new Point2D.Double(250, 324), mbl));
 		}
 		MenuMouseListener mml = new MenuMouseListener();
 		addMouseMotionListener(mml);

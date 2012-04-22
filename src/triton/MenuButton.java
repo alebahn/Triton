@@ -12,9 +12,11 @@ public class MenuButton {
 	private String label;
 	private Rectangle2D activeRegion;
 	private boolean hover, pressed;
-	public MenuButton(String label, Point2D location) {
+	private MenuButtonListener buttonListener;
+	public MenuButton(String label, Point2D location, MenuButtonListener buttonListener) {
 		this.label = label;
 		this.activeRegion = new Rectangle2D.Double(location.getX(), location.getY(), 300, 62);
+		this.buttonListener = buttonListener;
 		hover=false;
 	}
 	
@@ -31,7 +33,7 @@ public class MenuButton {
 	}
 	
 	public void click() {
-		JOptionPane.showMessageDialog(null, "Click!");
+		buttonListener.ButtonClicked(this);
 	}
 
 	public void Draw(Graphics2D g2d) {
