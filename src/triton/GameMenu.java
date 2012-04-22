@@ -91,13 +91,11 @@ public class GameMenu extends JPanel {
 			case STARTUP:
 				title="Triton";
 				
-				BufferedImage img = null;
 				try {
-					img = ImageIO.read(new File("img/Background.png"));
+					background = ImageIO.read(new File("img/Background.png"));
 				} catch (IOException e) {
 					throw new RuntimeException("Background Image Didn't Load");
 				}
-				this.background = img;
 				
 				buttons = new ArrayList<MenuButton>(5);
 				MenuButtonListener mbl = new MenuButtonListener() {
@@ -130,13 +128,11 @@ public class GameMenu extends JPanel {
 				title="Option Menu";
 				buttons = new ArrayList<MenuButton>(1);
 				
-				BufferedImage img1 = null;
 				try {
-					img1 = ImageIO.read(new File("img/Background.png"));
+					background = ImageIO.read(new File("img/Background.png"));
 				} catch (IOException e) {
 					throw new RuntimeException("Background Image Didn't Load");
 				}
-				this.background = img1;
 				
 				
 				MenuButtonListener obl = new MenuButtonListener(){
@@ -165,9 +161,8 @@ public class GameMenu extends JPanel {
 
 	@Override
 	public void paint(Graphics g) {
-		super.paint(g);
-		
 		Graphics2D g2d = (Graphics2D)g;
+		
 		g2d.drawImage(background, 0, 0, null);
 		g2d.setColor(Color.WHITE);
 		g2d.setFont(new Font("Comic Sans", Font.BOLD, 80));

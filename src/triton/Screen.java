@@ -24,13 +24,18 @@ public class Screen extends JPanel {
 			throw new RuntimeException("Player Ship Image Didn't Load");
 		}
 		field.add(new Player(0, img, null));
+		try {
+			background = ImageIO.read(new File("img/Background.png"));
+		} catch (IOException e) {
+			throw new RuntimeException("Background Image Didn't Load");
+		}
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		// TODO Auto-generated method stub
-		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
+		
+		g2d.drawImage(background, 0, 0, null);
 		for (Entity entity : field) {
 			entity.draw(g2d);
 		}
