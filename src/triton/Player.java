@@ -1,4 +1,5 @@
 package triton;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -16,7 +17,8 @@ public class Player extends Unit {
 	// no getters and setters for these yet
 	public Player(int money, Image image, Rectangle2D hitBox) {
 		super(money, image, hitBox);
-		move(new Point2D.Double(400, 300));
+		Dimension resolution = Triton.getTriton().getOptions().getResolution();
+		move( new Point2D.Double(resolution.getWidth()/2, resolution.getHeight()/2));
 	}
 	@Override
 	public void tick() {

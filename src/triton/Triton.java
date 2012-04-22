@@ -53,6 +53,10 @@ public class Triton extends JFrame
 		add(switchToFrame);
 		validate();
 	}
+	
+	public Options getOptions() {
+		return currentOptions;
+	}
 
 	/**
 	 * @param args
