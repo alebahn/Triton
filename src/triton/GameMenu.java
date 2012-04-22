@@ -1,5 +1,6 @@
 package triton;
 
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -11,6 +12,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -93,6 +95,12 @@ public class GameMenu extends JPanel {
 						String buttonText = button.getText();
 						if(buttonText.equals("quit")) {
 							System.exit(0);
+						}
+						if(buttonText.equals("options")) {
+							Container parent = getParent();
+							parent.remove(GameMenu.this);
+							parent.add(new GameMenu(MenuType.OPTIONS, null));
+							parent.validate();
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Click!");
