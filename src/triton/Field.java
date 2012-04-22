@@ -13,4 +13,14 @@ public class Field implements Iterable<Entity> {
 	public Iterator<Entity> iterator() {
 		return occupants.iterator();
 	}
+	
+	public void add(Entity objectToAdd){
+		occupants.add(objectToAdd);
+	}
+	
+	/*	
+	 * 		public void remove(Entity objectToRemove){
+	 *		occupants.remove(objectToRemove);
+	 *		}
+	 */
 }
