@@ -90,7 +90,8 @@ public class GameMenu extends JPanel {
 					
 					@Override
 					public void ButtonClicked(MenuButton button) {
-						if(button.getText().equals("quit")) {
+						String buttonText = button.getText();
+						if(buttonText.equals("quit")) {
 							System.exit(0);
 						}
 						else {
