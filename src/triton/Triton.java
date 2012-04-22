@@ -1,6 +1,7 @@
 package triton;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import triton.GameMenu.MenuType;
 
@@ -13,6 +14,12 @@ public class Triton extends JFrame
 		setResizable(false);
 		add(startup);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	public void SwitchPanel(JPanel switchToFrame){
+		removeAll();
+		add(switchToFrame);
+		validate();
 	}
 
 	/**
