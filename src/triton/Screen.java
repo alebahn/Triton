@@ -3,6 +3,8 @@ package triton;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.Rectangle2D.Double;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class Screen extends JPanel {
 		} catch (IOException e) {
 			throw new RuntimeException("Player Ship Image Didn't Load");
 		}
-		field.add(new Player(0, img, null));
+		field.add(new Player(0, img, new Rectangle2D.Double(-10, -10, 20, 20)));
 		try {
 			background = ImageIO.read(new File("img/Background.png"));
 		} catch (IOException e) {

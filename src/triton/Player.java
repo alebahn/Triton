@@ -1,6 +1,8 @@
 package triton;
 import java.awt.Image;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.geom.Point2D.Double;
 import java.util.ArrayList;
 
 public class Player extends Unit {
@@ -14,6 +16,7 @@ public class Player extends Unit {
 	// no getters and setters for these yet
 	public Player(int money, Image image, Rectangle2D hitBox) {
 		super(money, image, hitBox);
+		move(new Point2D.Double(400, 300));
 	}
 	@Override
 	public void tick() {

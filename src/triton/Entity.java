@@ -1,5 +1,6 @@
 package triton;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.Point2D;
@@ -18,6 +19,7 @@ public abstract class Entity {
 	}
 	public abstract void tick();
 	public void move(Point2D destination) {
+		location = destination;
 	}
 	public abstract void colide(Entity other);
 	public abstract void colisionReact(Entity other);
@@ -32,7 +34,10 @@ public abstract class Entity {
 		return false;
 	}
 	public void draw(Graphics2D g) {
-		g.drawImage(image, (int)Math.round(location.getX()), (int)Math.round(location.getY()), null);
+		g.translate(location.getX(), location.getY());
+		g.drawImage(image, -image.getWidth(null)/2, -image.getHeight(null)/2, null);
+		g.setColor(Color.RED);
+		g.draw(hitBox);
 	}
 
 }
