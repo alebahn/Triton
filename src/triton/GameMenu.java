@@ -1,5 +1,6 @@
 package triton;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -144,6 +145,8 @@ public class GameMenu extends JPanel {
 		super.paint(g);
 		
 		Graphics2D g2d = (Graphics2D)g;
+		g2d.drawImage(background, 0, 0, null);
+		g2d.setColor(Color.WHITE);
 		g2d.setFont(new Font("Comic Sans", Font.BOLD, 80));
 		FontMetrics fm = g2d.getFontMetrics();
 		Rectangle2D textSizeMono = fm.getStringBounds(title, g2d);
