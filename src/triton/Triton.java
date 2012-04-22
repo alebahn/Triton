@@ -40,8 +40,8 @@ public class Triton extends JFrame
 	private static Triton current = new Triton();
 	private Triton() {
 		setTitle("Triton");
-		setSize(800, 600);
 		currentOptions = new Options();
+		setSize((int)currentOptions.getResolution().getWidth(), (int)currentOptions.getResolution().getHeight());
 		GameMenu startup = new GameMenu(MenuType.STARTUP);
 		setResizable(false);
 		add(startup);
