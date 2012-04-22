@@ -1,5 +1,6 @@
 package triton;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
@@ -35,6 +36,7 @@ public class MenuButton {
 	}
 
 	public void Draw(Graphics2D g2d) {
+		g2d.setColor(Color.WHITE);
 		g2d.setFont(new Font("Comic Sans", Font.BOLD, pressed?35:40));
 		FontMetrics fm = g2d.getFontMetrics();
 		Rectangle2D textSizeMono = fm.getStringBounds(label, g2d);
