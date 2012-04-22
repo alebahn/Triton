@@ -10,8 +10,12 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -80,11 +84,20 @@ public class GameMenu extends JPanel {
 		
 	};
 	
-	public GameMenu(MenuType menuType, Image background) {
-		this.background = background;
+	public GameMenu(MenuType menuType) {
+		this.background = null;
 		switch (menuType) {
 			case STARTUP:
 				title="Triton";
+				
+				BufferedImage img = null;
+				try {
+					img = ImageIO.read(new File("img/Background.png"));
+				} catch (IOException e) {
+					throw new RuntimeException("Background Image Didn't Load");
+				}
+				this.background = img;
+				
 				buttons = new ArrayList<MenuButton>(5);
 				MenuButtonListener mbl = new MenuButtonListener() {
 					
@@ -96,7 +109,7 @@ public class GameMenu extends JPanel {
 						}
 						else if (buttonText.equals("options")) {
 							Triton currentTriton = Triton.getTriton();
-							currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.OPTIONS, null));
+							currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.OPTIONS));
 						}
 						else if (buttonText.equals("start")) {
 							Triton.getTriton().switchPanel(GameMenu.this, new Screen());
@@ -115,6 +128,16 @@ public class GameMenu extends JPanel {
 			case OPTIONS:
 				title="Option Menu";
 				buttons = new ArrayList<MenuButton>(1);
+				
+				BufferedImage img1 = null;
+				try {
+					img1 = ImageIO.read(new File("img/Background.png"));
+				} catch (IOException e) {
+					throw new RuntimeException("Background Image Didn't Load");
+				}
+				this.background = img1;
+				
+				
 				MenuButtonListener obl = new MenuButtonListener(){
 					
 					@Override
@@ -127,7 +150,7 @@ public class GameMenu extends JPanel {
 					@Override
 					public void ButtonClicked(MenuButton button) {
 						Triton currentTriton = Triton.getTriton();
-						currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.STARTUP, null));
+						currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.STARTUP));
 					}
 				};
 				buttons.add(new MenuButton("YOU REQUIRE ADDITIONAL OPTIONS" , new Point2D.Double(250,300), obl));
