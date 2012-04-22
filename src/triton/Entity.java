@@ -31,7 +31,7 @@ public abstract class Entity {
 		return false;
 	}
 	public void draw(Graphics2D g) {
-		
+		g.drawImage(image, (int)Math.round(location.getX()), (int)Math.round(location.getY()), null);
 	}
 
 }

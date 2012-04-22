@@ -23,7 +23,7 @@ public class Screen extends JPanel {
 		try {
 		    img = ImageIO.read(new File("SmilieShip.png"));
 		} catch (IOException e) {
-			throw new RuntimeException("PlayerShipDidn'tLoad");
+			throw new RuntimeException("Player Ship Image Didn't Load");
 		}
 		field.add(new Player(0, img, null));
 	}
