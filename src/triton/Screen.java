@@ -21,7 +21,7 @@ public class Screen extends JPanel {
 		field = new Field();
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File("SmilieShip.png"));
+		    img = ImageIO.read(new File("img/SmilieShip.png"));
 		} catch (IOException e) {
 			throw new RuntimeException("Player Ship Image Didn't Load");
 		}
