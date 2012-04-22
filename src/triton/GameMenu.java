@@ -96,7 +96,7 @@ public class GameMenu extends JPanel {
 						if(buttonText.equals("quit")) {
 							System.exit(0);
 						}
-						if(buttonText.equals("options")) {
+						else if(buttonText.equals("options")) {
 							Container parent = getParent();
 							parent.remove(GameMenu.this);
 							parent.add(new GameMenu(MenuType.OPTIONS, null));
