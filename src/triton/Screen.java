@@ -3,13 +3,11 @@ package triton;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class Screen extends JPanel {
@@ -21,7 +19,7 @@ public class Screen extends JPanel {
 		field = new Field();
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File("img/SmilieShip.png"));
+			img = ImageIO.read(new File("img/SmilieShip.png"));
 		} catch (IOException e) {
 			throw new RuntimeException("Player Ship Image Didn't Load");
 		}
