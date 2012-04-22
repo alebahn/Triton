@@ -2,12 +2,14 @@ package triton;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Field {
+public class Field implements Iterable<Entity> {
 	private ArrayList<Entity> occupants;
 
 	public Field() {
 	}
-	public Iterator<Entity> GetOccupantsIterator() {
+	
+	@Override
+	public Iterator<Entity> iterator() {
 		return occupants.iterator();
 	}
 }
