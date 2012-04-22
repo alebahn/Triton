@@ -90,7 +90,12 @@ public class GameMenu extends JPanel {
 					
 					@Override
 					public void ButtonClicked(MenuButton button) {
-						JOptionPane.showMessageDialog(null, "Click!");
+						if(button.getText().equals("quit")) {
+							System.exit(0);
+						}
+						else {
+							JOptionPane.showMessageDialog(null, "Click!");
+						}
 					}
 				};
 				buttons.add(new MenuButton("start", new Point2D.Double(100, 200), mbl));
