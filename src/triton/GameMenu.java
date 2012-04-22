@@ -121,8 +121,16 @@ public class GameMenu extends JPanel {
 						JOptionPane.showMessageDialog(null, "something or another thingy");
 					}
 				};
+				MenuButtonListener returnbl = new MenuButtonListener(){
+					
+					@Override
+					public void ButtonClicked(MenuButton button) {
+						Triton currentTriton = Triton.getTriton();
+						currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.STARTUP, null));
+					}
+				};
 				buttons.add(new MenuButton("YOU REQUIRE ADDITIONAL OPTIONS" , new Point2D.Double(250,300), obl));
-				buttons.add(new MenuButton("Return", new Point2D.Double(250, 400), obl));
+				buttons.add(new MenuButton("Return", new Point2D.Double(250, 400), returnbl));
 				break;
 		}
 		MenuMouseListener mml = new MenuMouseListener();
