@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class Screen extends JPanel {
 	private Field field;
-	private Image boarder;
+	private Image border;
 	private Image background;
 	public Screen() {
 	}
