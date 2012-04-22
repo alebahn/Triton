@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GameMenu extends JPanel {
-	public enum MenuType { STARTUP };
+	public enum MenuType { STARTUP , OPTIONS };
 	private String title;
 	private ArrayList<MenuButton> buttons;
 	private Image background;
@@ -98,6 +98,19 @@ public class GameMenu extends JPanel {
 				buttons.add(new MenuButton("options", new Point2D.Double(100, 262), mbl));
 				buttons.add(new MenuButton("tutorial", new Point2D.Double(400, 262), mbl));
 				buttons.add(new MenuButton("quit", new Point2D.Double(250, 324), mbl));
+				break;
+			case OPTIONS:
+				title="Option Menu";
+				buttons = new ArrayList<MenuButton>(1);
+				MenuButtonListener obl = new MenuButtonListener(){
+					
+					@Override
+					public void ButtonClicked(MenuButton button) {
+						JOptionPane.showMessageDialog(null, "something or another thingy");
+					}
+				};
+				buttons.add(new MenuButton("YOU REQUIRE ADDITIONAL OPTIONS" , new Point2D.Double(250,300), obl));
+				break;
 		}
 		MenuMouseListener mml = new MenuMouseListener();
 		addMouseMotionListener(mml);
