@@ -17,8 +17,8 @@ public class Triton extends JFrame
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-	public void switchPanel(JPanel switchToFrame){
-		remove(0);
+	public void switchPanel(JPanel oldFrame, JPanel switchToFrame){
+		remove(oldFrame);
 		add(switchToFrame);
 		validate();
 	}

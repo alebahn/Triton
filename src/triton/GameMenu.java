@@ -98,7 +98,7 @@ public class GameMenu extends JPanel {
 						}
 						else if(buttonText.equals("options")) {
 							Triton currentTriton = Triton.getTriton();
-							currentTriton.switchPanel(new GameMenu(MenuType.OPTIONS, null));
+							currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.OPTIONS, null));
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Click!");
