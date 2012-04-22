@@ -93,12 +93,15 @@ public class GameMenu extends JPanel {
 					@Override
 					public void ButtonClicked(MenuButton button) {
 						String buttonText = button.getText();
-						if(buttonText.equals("quit")) {
+						if (buttonText.equals("quit")) {
 							System.exit(0);
 						}
-						else if(buttonText.equals("options")) {
+						else if (buttonText.equals("options")) {
 							Triton currentTriton = Triton.getTriton();
 							currentTriton.switchPanel(GameMenu.this, new GameMenu(MenuType.OPTIONS, null));
+						}
+						else if (buttonText.equals("start")) {
+							Triton.getTriton().switchPanel(GameMenu.this, new Screen());
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Click!");
