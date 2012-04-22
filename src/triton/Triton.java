@@ -7,6 +7,7 @@ import triton.GameMenu.MenuType;
 
 public class Triton extends JFrame
 {
+	private static Triton current = new Triton();
 	private Triton() {
 		setTitle("Triton");
 		setSize(800, 600);
@@ -16,8 +17,8 @@ public class Triton extends JFrame
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-	public void SwitchPanel(JPanel switchToFrame){
-		removeAll();
+	public void switchPanel(JPanel switchToFrame){
+		remove(0);
 		add(switchToFrame);
 		validate();
 	}
@@ -27,8 +28,11 @@ public class Triton extends JFrame
 	 */
 	public static void main(String[] args)
 	{
-		Triton tritonFrame = new Triton();
+		Triton tritonFrame = current;
 		tritonFrame.setVisible(true);
+	}
+	public static Triton getTriton(){
+		return current;
 	}
 
 }

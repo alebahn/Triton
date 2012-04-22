@@ -97,10 +97,8 @@ public class GameMenu extends JPanel {
 							System.exit(0);
 						}
 						else if(buttonText.equals("options")) {
-							Container parent = getParent();
-							parent.remove(GameMenu.this);
-							parent.add(new GameMenu(MenuType.OPTIONS, null));
-							parent.validate();
+							Triton currentTriton = Triton.getTriton();
+							currentTriton.switchPanel(new GameMenu(MenuType.OPTIONS, null));
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Click!");
@@ -124,7 +122,7 @@ public class GameMenu extends JPanel {
 					}
 				};
 				buttons.add(new MenuButton("YOU REQUIRE ADDITIONAL OPTIONS" , new Point2D.Double(250,300), obl));
-				buttons.add(new MenuButton("Return", new Point2D.Double(250, 350), obl));
+				buttons.add(new MenuButton("Return", new Point2D.Double(250, 400), obl));
 				break;
 		}
 		MenuMouseListener mml = new MenuMouseListener();
