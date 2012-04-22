@@ -48,4 +48,8 @@ public class MenuButton {
 	public boolean isPressed() {
 		return pressed;
 	}
+	
+	public String getText() {
+		return label;
+	}
 }

@@ -12,6 +12,7 @@ public class Triton extends JFrame
 		GameMenu startup = new GameMenu(MenuType.STARTUP, null);
 		setResizable(false);
 		add(startup);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
 	/**
