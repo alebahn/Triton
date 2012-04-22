@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.geom.Point2D.Float;
 
 public abstract class Entity {
 	protected Image image;
@@ -14,6 +15,7 @@ public abstract class Entity {
 	public Entity(Image image, Rectangle2D hitBox) {
 		this.image = image;
 		this.hitBox = hitBox;
+		location = new Point2D.Float(0,0);
 	}
 	public abstract void tick();
 	public void move(Point2D destination) {
