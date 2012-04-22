@@ -6,6 +6,7 @@ public class Field implements Iterable<Entity> {
 	private ArrayList<Entity> occupants;
 
 	public Field() {
+		occupants = new ArrayList<Entity>();
 	}
 	
 	@Override

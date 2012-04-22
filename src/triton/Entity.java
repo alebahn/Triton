@@ -1,5 +1,6 @@
 package triton;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -28,6 +29,9 @@ public abstract class Entity {
 	}
 	public boolean isCollidingWith(Entity other) {
 		return false;
+	}
+	public void draw(Graphics2D g) {
+		
 	}
 
 }
