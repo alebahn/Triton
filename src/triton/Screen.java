@@ -4,7 +4,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -15,7 +19,13 @@ public class Screen extends JPanel {
 
 	public Screen() {
 		field = new Field();
-		field.add(new Player(0,new ImageIcon("SmilieShip.png").getImage(), null));
+		BufferedImage img = null;
+		try {
+		    img = ImageIO.read(new File("SmilieShip.png"));
+		} catch (IOException e) {
+			throw new RuntimeException("PlayerShipDidn'tLoad");
+		}
+		field.add(new Player(0, img, null));
 	}
 
 	@Override
